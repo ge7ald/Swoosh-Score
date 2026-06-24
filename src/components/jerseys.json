@@ -1,0 +1,53 @@
+
+
+
+[
+  {
+    "id": 1,
+    "name": "Manchester United Home Jersey 2025/26",
+    "team": "Manchester United",
+    "type": "Home",
+    "season": "2025/26",
+    "price": 20000.99,
+    "currency": "NGN",
+    "size": ["S", "M", "L", "XL"],
+    "image": "./src/assets/image/man-utd-home.jpg",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Real Madrid Away Jersey 2025/26",
+    "team": "Real Madrid",
+    "type": "Away",
+    "season": "2025/26",
+    "price": 20000.99,
+    "currency": "NGN",
+    "size": ["S", "M", "L", "XL"],
+    "image": "https://picsum.photos/200/700?random=1",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "Barcelona Third Jersey 2025/26",
+    "team": "Barcelona",
+    "type": "Third",
+    "season": "2025/26",
+    "price": 20000.99,
+    "currency": "NGN",
+    "size": ["S", "M", "L", "XL"],
+    "image": "https://picsum.photos/100/700?random=1",
+    "inStock": false
+  },
+  {
+    "id": 4,
+    "name": "Arsenal Home Jersey 2025/26",
+    "team": "Arsenal",
+    "type": "Home",
+    "season": "2025/26",
+    "price": 20000.99,
+    "currency": "NGN",
+    "size": ["S", "M", "L", "XL"],
+    "image": "https://picsum.photos/900/700?random=1",
+    "inStock": true
+  }
+]
