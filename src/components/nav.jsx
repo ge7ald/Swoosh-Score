@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Nav() {
   const [openNav, setOpenNav] = useState(false);
   return (
     <>
-      <nav className="flex justify-between items-center px-4 bg- navigation w-full sm:py-2 sm:px-10 rounded-full fixed sm:top-2 sm:left-1/2 transform sm:-translate-x-1/2 sm:w-11/12">
+      <nav className="flex justify-between z-50 items-center px-4 bg- navigation w-full sm:py-2 sm:px-10 rounded-full fixed sm:top-2 sm:left-1/2 transform sm:-translate-x-1/2 sm:w-11/12">
         <div className="flex gap-10 items-center justify-center">
           <span className=" md:flex hidden">
             <h1 className="text-3xl font-black">Swoosh</h1>
@@ -30,9 +31,10 @@ function Nav() {
             <a href="">Contact</a>
           </li>
         </ul>
-        <div className="block md:hidden" onClick={() => setOpenNav(!openNav)}>
-          
-        </div>
+        <div
+          className="block md:hidden"
+          onClick={() => setOpenNav(!openNav)}
+        ></div>
       </nav>
 
       {/* Mobile Navigation */}
@@ -41,9 +43,17 @@ function Nav() {
           <li className="flex-1 flex justify-center items-center hover:scale-110 transition-transform">
             <i className="bx bx-home text-2xl sm:text-3xl"></i>
           </li>
-          <li className="flex-1 text-center hover:scale-110 transition-transform">
-            <i className="bx bx-cart text-2xl sm:text-3xl"></i>
-          </li>
+          <Link to="/cartSection">
+            <li className="flex-1 flex justify-center">
+              <div className="relative inline-flex">
+                <i className="bx bx-cart text-[1.7rem] sm:text-3xl"></i>
+
+                <span className="absolute -top-2 -right-2 bg-accent text-[10px] min-w-5 h-5 flex items-center justify-center rounded-full text-primary">
+                  1
+                </span>
+              </div>
+            </li>
+          </Link>
           <li className="flex-1 text-center hover:scale-110 transition-transform">
             <i className="bx bx-store text-2xl sm:text-3xl"></i>
           </li>
