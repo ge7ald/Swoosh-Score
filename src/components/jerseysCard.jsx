@@ -1,16 +1,17 @@
 import jerseys from "./jerseys.json";
 
-function Jerseys() {
+function Jerseys( { cartItem }) {
   return (
     <div className="flex gap-6 overflow-x-auto pb-4">
       {jerseys.map((jersey) => (
-        <JerseysCard key={jersey.id} jersey={jersey} />
+        <JerseysCard key={jersey.id} jersey={jersey} 
+          cartItem={cartItem}/>
       ))}
     </div>
   );
 }
 
-function JerseysCard({ jersey }) {
+function JerseysCard({ jersey, cartItem }) {
   return (
     <div className="relative flex-shrink-0 w-80 overflow-hidden rounded-[2rem] bg-white p-8 shadow-lg">
       <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-primary/10 blur-2xl" />
@@ -34,10 +35,15 @@ function JerseysCard({ jersey }) {
         <div className="flex items-center justify-between gap-4">
           <p className="text-3xl font-black">₦{Number(jersey.price).toLocaleString()}</p>
 
-          <button className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-surface">
-            <i className="bx bx-cart" />
-            <p className="hidden md:block">Add to Cart</p>
-          </button>
+          <button
+  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-surface"
+  onClick={() => {
+    cartItem(jersey);
+  }}
+>
+  <i className="bx bx-cart" />
+  <p className="hidden md:block">Add to Cart</p>
+</button>
         </div>
       </div>
     </div>

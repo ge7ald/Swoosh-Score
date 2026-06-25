@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Nav() {
+function Nav( {numOfCartItems}) {
   const [openNav, setOpenNav] = useState(false);
   return (
     <>
@@ -40,26 +40,33 @@ function Nav() {
       {/* Mobile Navigation */}
       <nav className="fixed bottom-5 left-1/2 -translate-x-1/2 w-11/12 md:hidden bg-primary rounded-full p-4 shadow-lg z-50">
         <ul className="flex justify-between items-center text-surface text-lg font-semibold">
+          <Link to="/">
           <li className="flex-1 flex justify-center items-center hover:scale-110 transition-transform">
             <i className="bx bx-home text-2xl sm:text-3xl"></i>
           </li>
+          </Link>
           <Link to="/cartSection">
             <li className="flex-1 flex justify-center">
               <div className="relative inline-flex">
                 <i className="bx bx-cart text-[1.7rem] sm:text-3xl"></i>
 
                 <span className="absolute -top-2 -right-2 bg-accent text-[10px] min-w-5 h-5 flex items-center justify-center rounded-full text-primary">
-                  1
+                  {numOfCartItems}
                 </span>
               </div>
             </li>
           </Link>
+          <Link to="/shop">
           <li className="flex-1 text-center hover:scale-110 transition-transform">
             <i className="bx bx-store text-2xl sm:text-3xl"></i>
           </li>
+          </Link>
+
+          <Link to="/cartSection">
           <li className="flex-1 text-center hover:scale-110 transition-transform">
             <i className="bx bx-envelope text-2xl sm:text-3xl"></i>
           </li>
+          </Link>
         </ul>
       </nav>
     </>
