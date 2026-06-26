@@ -1,6 +1,35 @@
+import { useState } from "react";
 import Nav from "../components/nav";
 
 function CartItems({ item, CheckIfInCart, numOfCartItems, totalPrice, onToggleRemove }) {
+    
+   const newOrder = () => {
+      const phone = "2347012763719";
+
+    const message = item.map((jersey) => 
+`*i wan buy*
+
+Jersey: ${jersey.name}
+Price: ${jersey.price}
+Quantity: ${jersey.quantity}
+
+Image:
+${{/*window.location.origin*/}} ${jersey.image}
+
+
+
+
+Total: ${totalPrice}
+`
+    ) 
+
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+   }
+
+   
  
   return (
     <div className="min-h-screen bg-background text-text ">
@@ -21,7 +50,7 @@ function CartItems({ item, CheckIfInCart, numOfCartItems, totalPrice, onToggleRe
         </ul>
       </main>
       {totalPrice > 0 && 
-      <button className="fixed bottom-30 left-1/2 -translate-x-1/2 bg-accent w-[90%] text-center py-4 rounded-3xl text-lg font-semibold">
+      <button className="fixed bottom-30 left-1/2 -translate-x-1/2 bg-accent w-[90%] text-center py-4 rounded-3xl text-lg font-semibold" onClick={newOrder}>
         Buy <span className="text-primary text-lg">₦{totalPrice.toLocaleString()}</span>
       </button>}
     </div>

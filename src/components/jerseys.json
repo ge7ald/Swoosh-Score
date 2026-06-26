@@ -12,7 +12,7 @@
     "currency": "NGN",
     "quantities": 1,
     "size": ["S", "M", "L", "XL"],
-    "image": "./src/assets/image/man-utd-home.jpg",
+    "image": "/image/man-utd-home.jpg",
     "inStock": true
   },
   {
